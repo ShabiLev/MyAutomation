@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "poetryproject"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+#C:\Users\shabil\AppData\Roaming\pypoetry\venv\Scripts\poetry
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "2.28.2"
+pytest = "7.2.1"
+selenium = "^4.8.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
