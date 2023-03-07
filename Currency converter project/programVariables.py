@@ -1,37 +1,32 @@
 import os
 import requests
-import xmltodict
 import json
+import datetime
 
-
-import tkinter as tk
 
 logfilePath = "C:\\Users\\" + os.getlogin() + "\\OneDrive - Ofakim Group\\Desktop\\log.txt"
+
+
+def get_current_time():
+    now = datetime.datetime.now()
+    cur_date_time = now.strftime("%d-%m-%Y %H:%M:%S")
+    return cur_date_time
+
+
+def log_to_file(what_to_log):
+    logFile = open(logfilePath, 'a')
+    logFile.write('\n' + get_current_time() + ' - ' + what_to_log)
+    logFile.close()
+
+
+def open_log():
+    os.system('notepad.exe ' + logfilePath)
+
+
 api_key = "96753c12b86447d2932b6502c72e36a8"
 url = f"https://openexchangerates.org/api/latest.json?app_id={api_key}"
 response = requests.get(url)
 data = json.loads(response.text)
-
-curdict = {
-    "USD": 3.52,
-    "ILS": 0.28,
-    "EUR": 4.23
-}
-
-fromilsdic = {
-    "USD": 0.28,
-    "EUR": 0.26
-}
-
-fromusddic = {
-    "ILS": 3.58,
-    "EUR": 0.94
-}
-
-fromeurdic = {
-    "USD": 1.07,
-    "ILS": 3.82
-}
 
 
 def get_curr_ils_rate():

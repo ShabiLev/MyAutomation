@@ -1,34 +1,14 @@
-import datetime
 import time
 import tkinter
 from programVariables import *
 import tkinter as tk
+import tkinter.simpledialog
 from tkinter import messagebox
-
-
-def get_current_time():
-    now = datetime.datetime.now()
-    cur_date_time = now.strftime("%d-%m-%Y %H:%M:%S")
-    return cur_date_time
 
 
 def get_user_float_num():
     userfloatnum = tkinter.simpledialog.askfloat('Amount', 'How much do you want to convert?')
     return userfloatnum
-
-
-def log_to_file(what_to_log):
-    logFile = open(logfilePath, 'a')
-    logFile.write('\n' + get_current_time() + ' - ' + what_to_log)
-    logFile.close()
-
-
-def open_log():
-    os.system('notepad.exe ' + logfilePath)
-
-
-def clear_terminal():
-    print("\n\n", end="")
 
 
 def get_user_yesno():
@@ -79,7 +59,6 @@ def what_to_convert():
     message.lift()
     message.attributes('-topmost', True)
     message.attributes('-topmost', False)
-
 
     button1 = tk.Button(message,
                         text='ILS To USD',
