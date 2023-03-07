@@ -37,19 +37,19 @@ from datetime import datetime
 # getcurrentTime()
 
 
-# def sumUserInput():
-#     lst = []
-#     errors = []
-#     numbers = input("Enter any digits: ")
-#     for num in numbers: #For each
-#         try:
-#             lst.append(int(num)) #Cast the String input into Integer and add them one by one to the list
-#             #print(sum(lst)) #Sum the numbers in the List
-#         except ValueError:
-#             errors.append(num)
-#     print(f"{errors} are Not numbers")
-#     print(f"The total value of you numbers is: {sum(lst)}") # Sum the numbers in the List
-# sumUserInput()
+def sumUserInput():
+    lst = []
+    errors = []
+    numbers = input("Enter any digits: ")
+    for num in numbers: #For each
+        try:
+            lst.append(int(num)) #Cast the String input into Integer and add them one by one to the list
+            #print(sum(lst)) #Sum the numbers in the List
+        except ValueError:
+            errors.append(num)
+    print(f"{errors} are Not numbers")
+    print(f"The total value of you numbers is: {sum(lst)}") # Sum the numbers in the List
+sumUserInput()
 # Enter any digits: 12e351r653r
 # ['e', 'r', 'r'] are Not numbers
 # The total value of you numbers is: 26
