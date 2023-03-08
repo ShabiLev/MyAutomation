@@ -3,7 +3,7 @@ import requests
 import json
 import datetime
 
-
+# Relative path to the log file
 logfilePath = "C:\\Users\\" + os.getlogin() + "\\OneDrive - Ofakim Group\\Desktop\\log.txt"
 
 
@@ -23,22 +23,24 @@ def open_log():
     os.system('notepad.exe ' + logfilePath)
 
 
-api_key = "96753c12b86447d2932b6502c72e36a8"
-url = f"https://openexchangerates.org/api/latest.json?app_id={api_key}"
-response = requests.get(url)
-data = json.loads(response.text)
+def get_rates():
+    api_key = "96753c12b86447d2932b6502c72e36a8"
+    url = f"https://openexchangerates.org/api/latest.json?app_id={api_key}"
+    response = requests.get(url)
+    data = json.loads(response.text)
+    return data
 
 
 def get_curr_ils_rate():
-    ils_rate = data["rates"]["ILS"]
+    ils_rate = round(get_rates()["rates"]["ILS"], 4)
     return ils_rate
 
 
 def get_curr_usd_rate():
-    usd_rate = data["rates"]["USD"]
+    usd_rate = round(get_rates()["rates"]["USD"], 4)
     return usd_rate
 
 
 def get_curr_eur_rate():
-    eur_rate = data["rates"]["EUR"]
+    eur_rate = round(get_rates()["rates"]["EUR"], 4)
     return eur_rate
