@@ -4,7 +4,7 @@ import json
 import datetime
 
 # Relative path to the log file
-logfilePath = "C:\\Users\\" + os.getlogin() + "\\OneDrive - Ofakim Group\\Desktop\\log.txt"
+logfilePath = "C:\\Users\\" + os.getlogin() + "\\OneDrive - Ofakim Group\\Desktop\\Calculator_log.txt"
 
 
 def get_current_time():
